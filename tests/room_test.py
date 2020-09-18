@@ -12,12 +12,19 @@ class TestRoom(unittest.TestCase):
         self.song_1 = Song("Hopelessly Devoted To You", "Olivia Newton-John")
         self.song_2 = Song("Beauty School Drop-Out", "Frankie Avalon")
         self.song_3 = Song("Look at Me, I'm Sandra Dee", "Stockard Channing")
-        self.room.songs = [self.song_1, self.song_2]
+        self.song_list = [self.song_1, self.song_2]
 
         self.guest_betty = Guest("Rizzo", 19, 50.00)
         self.guest_sandy = Guest("Sandy", 18, 30.50)
         self.guest_danny = Guest("Danny Zuko", 20, 34.50)
         self.guest_francesca = Guest("Frenchie", 16, 4.50)
-        self.room.guests = [self.guest_betty, self.guest_danny, self.guest_francesca]
+        self.guest_list = [self.guest_betty, self.guest_danny, self.guest_francesca]
 
-    
+    def test_karaoke_room_has_name(self):
+        self.assertEqual("Pink Ladies", self.room_2.name)
+
+    def test_karaoke_room_has_guests_in_it(self):
+        self.assertEqual(3, len(self.guest_list))
+
+    def test_karaoke_room_has_songs_to_sing(self):
+        self.assertEqual(2, len(self.song_list))
