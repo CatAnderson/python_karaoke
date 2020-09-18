@@ -13,4 +13,9 @@ class Room:
 
     def check_in_guest_to_room(self, guest):
         self.guest_list.append(guest)
+
+    def check_out_guest_from_room(self, guest):
+        self.guest_list.remove(guest)
+
+    
     

@@ -34,3 +34,7 @@ class TestRoom(unittest.TestCase):
         Room.check_in_guest_to_room(self, self.guest_sandy)
         self.assertEqual(4, len(self.guest_list))
 
+    def test_removing_guest_from_karaoke_room(self):
+        Room.check_out_guest_from_room(self, self.guest_danny)
+        self.assertEqual(2, len(self.guest_list))
+
