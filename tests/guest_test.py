@@ -9,7 +9,7 @@ class TestGuest(unittest.TestCase):
         self.guest_betty = Guest("Rizzo", 19, 50.00)
         self.guest_sandy = Guest("Sandy", 18, 30.50)
         self.guest_danny = Guest("Danny Zuko", 20, 34.50)
-        self.guest_francesca = Guest("Frenchie", 16, 29.00)
+        self.guest_francesca = Guest("Frenchie", 16, 4.50)
     
     def test_guest_has_name(self):
         self.assertEqual("Rizzo", self.guest_betty.name)
