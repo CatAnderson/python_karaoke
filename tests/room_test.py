@@ -15,7 +15,7 @@ class TestRoom(unittest.TestCase):
         self.song_list = [self.song_1, self.song_2]
 
         self.guest_betty = Guest("Rizzo", 19, 50.00)
-        self.guest_sandy = Guest("Sandy", 18, 30.50)
+        
         self.guest_danny = Guest("Danny Zuko", 20, 34.50)
         self.guest_francesca = Guest("Frenchie", 16, 4.50)
         self.guest_list = [self.guest_betty, self.guest_danny, self.guest_francesca]
@@ -28,3 +28,9 @@ class TestRoom(unittest.TestCase):
 
     def test_karaoke_room_has_songs_to_sing(self):
         self.assertEqual(2, len(self.song_list))
+
+    def test_adding_guest_to_karaoke_room(self):
+        self.guest_sandy = Guest("Sandy", 18, 30.50)
+        Room.check_in_guest_to_room(self, self.guest_sandy)
+        self.assertEqual(4, len(self.guest_list))
+

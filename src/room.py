@@ -11,3 +11,6 @@ class Room:
         self.till = 0
 
 
+    def check_in_guest_to_room(self, guest):
+        self.guest_list.append(guest)
+    
