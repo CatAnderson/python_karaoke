@@ -18,6 +18,7 @@ class TestRoom(unittest.TestCase):
         self.guest_francesca = Guest("Frenchie", 16, 4.50)
         self.guest_list = [self.guest_betty, self.guest_danny, self.guest_francesca]
 
+
     def test_karaoke_room_has_name(self):
         self.assertEqual("Pink Ladies", self.room_2.name)
 
@@ -40,3 +41,7 @@ class TestRoom(unittest.TestCase):
         self.song_3 = Song("Look at Me, I'm Sandra Dee", "Stockard Channing")
         Room.adding_song_to_playlist(self, self.song_3)
         self.assertEqual(3, len(self.song_list))
+
+    def test_karaoke_room_capacity(self):
+        self.assertEqual(3, self.room_1.room_capacity)
+    
