@@ -19,3 +19,7 @@ class TestGuest(unittest.TestCase):
 
     def test_song_has_moeny_in_wallet(self):
         self.assertEqual(30.50, self.guest_sandy.wallet)
+    
+    def test_guest_has_paid_entrance_fee(self):
+        self.guest_danny.alter_guests_wallet_amount(5.50)
+        self.assertEqual(29.00, self.guest_danny.wallet)

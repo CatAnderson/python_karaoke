@@ -5,4 +5,5 @@ class Guest:
         self.wallet = wallet
 
     
-
+    def alter_guests_wallet_amount(self, entrance_fee):
+        self.wallet -= entrance_fee
