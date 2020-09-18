@@ -11,11 +11,9 @@ class TestRoom(unittest.TestCase):
 
         self.song_1 = Song("Hopelessly Devoted To You", "Olivia Newton-John")
         self.song_2 = Song("Beauty School Drop-Out", "Frankie Avalon")
-        self.song_3 = Song("Look at Me, I'm Sandra Dee", "Stockard Channing")
         self.song_list = [self.song_1, self.song_2]
 
         self.guest_betty = Guest("Rizzo", 19, 50.00)
-        
         self.guest_danny = Guest("Danny Zuko", 20, 34.50)
         self.guest_francesca = Guest("Frenchie", 16, 4.50)
         self.guest_list = [self.guest_betty, self.guest_danny, self.guest_francesca]
@@ -38,3 +36,7 @@ class TestRoom(unittest.TestCase):
         Room.check_out_guest_from_room(self, self.guest_danny)
         self.assertEqual(2, len(self.guest_list))
 
+    def test_adding_song_to_playlist(self):
+        self.song_3 = Song("Look at Me, I'm Sandra Dee", "Stockard Channing")
+        Room.adding_song_to_playlist(self, self.song_3)
+        self.assertEqual(3, len(self.song_list))
