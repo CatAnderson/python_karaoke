@@ -15,4 +15,5 @@ class TestSong(unittest.TestCase):
 
     def test_song_has_artist(self):
         self.assertEqual("Frankie Avalon", self.song_2.artist)
-        
+
+    
