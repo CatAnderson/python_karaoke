@@ -23,3 +23,6 @@ class TestGuest(unittest.TestCase):
     def test_alter_guest_wallet(self):
         self.guest_3.alter_guests_wallet_amount(5.50)
         self.assertEqual(29.00, self.guest_3.wallet)
+
+    def test_guest_does_not_have_enough_money(self):
+        self.assertEqual("Not enough money!", self.guest_4.alter_guests_wallet_amount(5.50))

@@ -6,4 +6,7 @@ class Guest:
 
     
     def alter_guests_wallet_amount(self, entrance_fee):
-        self.wallet -= entrance_fee
+        if self.wallet < entrance_fee:
+            return "Not enough money!"
+        else:
+            self.wallet -= entrance_fee
