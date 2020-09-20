@@ -20,11 +20,10 @@ class Room:
     def till_transaction(self, transaction_amount):
         self.till += transaction_amount
 
-
-    # def no_spaces_left_in_room(self, guest_list):
-    #     if len(self.guest_list) >= self.room_capacity:
-    #         return "No spaces left"
-    #     else:
-    #         return len(self.guest_list)
+    def no_spaces_left_in_room(self, guest_list):
+        if len(self.guest_list) >= 3:
+            return "No spaces left"
+        else:
+            self.guest_list.append(guest)
 
     
