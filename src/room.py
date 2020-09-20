@@ -11,15 +11,21 @@ class Room:
     def check_in_guest_to_room(self, guest):
         if len(self.guest_list) <= 3:
             self.guest_list.append(guest)
-        else:
-            return "No spaces left"
+
+    def room_full(self, guest):
+        self.guest_list.append(guest)
+        if len(self.guest_list) > self.room_capacity:
+                return "No spaces left"
+
             
 
     def check_out_guest_from_room(self, guest):
         self.guest_list.remove(guest)
 
+
     def adding_song_to_playlist(self, song):
         self.song_list.append(song)
+
 
     def till_transaction(self, transaction_amount):
         self.till += transaction_amount
