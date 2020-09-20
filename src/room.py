@@ -17,13 +17,14 @@ class Room:
     def adding_song_to_playlist(self, song):
         self.song_list.append(song)
 
+    def till_transaction(self, transaction_amount):
+        self.till += transaction_amount
+
+
     # def no_spaces_left_in_room(self, guest_list):
     #     if len(self.guest_list) >= self.room_capacity:
     #         return "No spaces left"
     #     else:
     #         return len(self.guest_list)
-
-    def till_transaction(self, transaction_amount):
-        self.till += transaction_amount
 
     
