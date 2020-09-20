@@ -5,7 +5,7 @@ class Room:
         self.song_list = []
         self.room_capacity = 3
         self.entrance_fee = 5.50
-        # self.till = 0
+        self.till = 0
 
 
     def check_in_guest_to_room(self, guest):
@@ -23,6 +23,7 @@ class Room:
     #     else:
     #         return len(self.guest_list)
 
-
+    def till_transaction(self, transaction_amount):
+        self.till += transaction_amount
 
     

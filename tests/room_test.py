@@ -53,3 +53,20 @@ class TestRoom(unittest.TestCase):
 
     def test_karaoke_room_has_entrance_fee(self):
         self.assertEqual(5.50, self.room_1.entrance_fee)
+
+    def test_karaoke_room_has_till_amount(self):
+        self.assertEqual(0, self.room_1.till)
+
+    def test_add_entrance_fee_to_till(self):
+        self.room_1.till_transaction(5.50)
+        self.assertEqual(5.50, self.room_1.till)
+
+    # def test_guest_has_paid_entrance_fee(self):
+    #     self.customer_3.add_drink_to_customer_hand(self.drink_beer)
+    #     self.customer_1.alter_customer_wallet_amount(self.drink_beer.price)
+    #     self.pub.till_transaction(self.drink_beer.price)
+    #     self.pub.remove_drink(self.drink_beer)
+    #     self.assertEqual(1, len(self.customer_1.drinks_in_hand))
+    #     self.assertEqual(45, self.customer_1.wallet)
+    #     self.assertEqual(105.00, self.pub.cash)
+    #     self.assertEqual(0, self.pub.drink_count())
