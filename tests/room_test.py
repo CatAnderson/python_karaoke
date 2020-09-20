@@ -42,6 +42,20 @@ class TestRoom(unittest.TestCase):
         Room.adding_song_to_playlist(self, self.song_3)
         self.assertEqual(3, len(self.song_list))
 
+    def test_karaoke_room_capacity(self):
+        self.assertEqual(3, self.room_1.room_capacity)
+    
+    def test_no_space_left_in_karaoke_room(self):
+        self.guest_4 = Guest("Sandy", 18, 30.50)
+        self.guest_5 = Guest("Kenickie", 21, 35.50)
+        self.guest_6 = Guest("Roger", 16, 35.50)
+        self.guest_7 = Guest("Cha Cha", 25, 35.50)
+        self.room_1.check_in_guest_to_room(self.guest_4)
+        self.room_1.check_in_guest_to_room(self.guest_5)
+        self.room_1.check_in_guest_to_room(self.guest_6)
+        self.room_1.check_in_guest_to_room(self.guest_7)
+        self.assertEqual(3, len(self.guest_list))
+
     def test_karaoke_room_has_entrance_fee(self):
         self.assertEqual(5.50, self.room_1.entrance_fee)
 
@@ -60,13 +74,3 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(1, len(self.room_1.guest_list))
         self.assertEqual(25.00, self.guest_4.wallet)
         self.assertEqual(5.50, self.room_1.till)
-
-    def test_karaoke_room_capacity(self):
-        self.assertEqual(3, self.room_1.room_capacity)
-    
-    def test_no_space_left_in_karaoke_room(self):
-        self.guest_list = [self.guest_1, self.guest_2, self.guest_3]
-        self.guest_4 = Guest("Sandy", 18, 30.50)
-        Room.check_in_guest_to_room(self, self.guest_4)
-        self.assertEqual(4, len(self.guest_list))
-        self.assertEqual("No spaces left", Room.no_spaces_left_in_room(self, self.guest_list))
