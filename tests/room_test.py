@@ -47,9 +47,9 @@ class TestRoom(unittest.TestCase):
     
     def test_no_space_left_in_karaoke_room(self):
         self.guest_4 = Guest("Sandy", 18, 30.50)
-        self.guest_5 = Guest("Kenickie", 21, 35.50)
+        self.guest_5 = Guest("Kenickie", 21, 55.50)
         self.guest_6 = Guest("Roger", 16, 35.50)
-        self.guest_7 = Guest("Cha Cha", 25, 35.50)
+        self.guest_7 = Guest("Cha Cha", 25, 10.00)
         self.room_1.check_in_guest_to_room(self.guest_4)
         self.room_1.check_in_guest_to_room(self.guest_5)
         self.room_1.check_in_guest_to_room(self.guest_6)

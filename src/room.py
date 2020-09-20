@@ -12,12 +12,12 @@ class Room:
         if len(self.guest_list) <= 3:
             self.guest_list.append(guest)
 
+
     def room_full(self, guest):
         self.guest_list.append(guest)
         if len(self.guest_list) > self.room_capacity:
                 return "No spaces left"
 
-            
 
     def check_out_guest_from_room(self, guest):
         self.guest_list.remove(guest)
