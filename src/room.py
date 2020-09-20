@@ -4,7 +4,7 @@ class Room:
         self.guest_list = []
         self.song_list = []
         self.room_capacity = 3
-        # self.entrance_fee = 5.50
+        self.entrance_fee = 5.50
         # self.till = 0
 
 
@@ -18,7 +18,7 @@ class Room:
         self.song_list.append(song)
 
     # def no_spaces_left_in_room(self, guest_list):
-    #     if len(self.guest_list) > self.room_capacity:
+    #     if len(self.guest_list) >= self.room_capacity:
     #         return "No spaces left"
     #     else:
     #         return len(self.guest_list)

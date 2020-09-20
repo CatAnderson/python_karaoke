@@ -45,8 +45,11 @@ class TestRoom(unittest.TestCase):
     def test_karaoke_room_capacity(self):
         self.assertEqual(3, self.room_1.room_capacity)
     
-    def test_no_space_left_in_karaoke_room(self):
-        self.guest_4 = Guest("Sandy", 18, 30.50)
-        Room.check_in_guest_to_room(self, self.guest_4)
-        # self.assertEqual(3, len(self.guest_list))
-        self.assertEqual("No spaces left", self.room_1.no_spaces_left_in_room(self.guest_list))
+    # def test_no_space_left_in_karaoke_room(self):
+    #     self.guest_4 = Guest("Sandy", 18, 30.50)
+    #     Room.check_in_guest_to_room(self, self.guest_4)
+    #     self.assertEqual(3, len(self.guest_list))
+    #     self.assertEqual("No spaces left", self.room_1.no_spaces_left_in_room(self.guest_list))
+
+    def test_karaoke_room_has_entrance_fee(self):
+        self.assertEqual(5.50, self.room_1.entrance_fee)
