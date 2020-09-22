@@ -3,13 +3,13 @@ class Room:
         self.name = name
         self.guest_list = []
         self.song_list = []
-        self.room_capacity = 3
+        self.room_capacity = 4
         self.entrance_fee = 5.50
         self.till = 0
 
 
     def check_in_guest_to_room(self, guest):
-        if len(self.guest_list) <= 3:
+        if len(self.guest_list) < self.room_capacity:
             self.guest_list.append(guest)
 
 
